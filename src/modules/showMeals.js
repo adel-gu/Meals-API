@@ -1,8 +1,12 @@
 import getdata from './addData';
 
-const showMeals = async (container) => {
-  const meals = await getdata();
-  meals.forEach((meal) => {
+const showMeals = async (container, pageIndex) => {
+  // Get meals list
+  let meals = await getdata();
+  // Slice only 9 meals elements
+  let limitMeals = meals.slice(pageIndex, pageIndex + 9);
+  // Populate meals to the screen
+  limitMeals.forEach((meal) => {
     const mealTemplate = `
       <li class="col pb-4">
         <div class="card" style="width: 18rem">
