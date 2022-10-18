@@ -1,7 +1,9 @@
 import './style.css';
-import { URL_API, getFoodList } from './modules/listItems';
-
+import {getdata} from './modules/addData';
 // Using getFoodList function //
-//   async () => {
-//        let foodList = await getFoodList(URL_API);
-//   };
+  const data = async () => {
+     let foodList = await getdata()
+     console.log(foodList[0])
+  };
+  data();
+
