@@ -21,7 +21,11 @@
   "homepage": "https://github.com/adel-gu/webpack-ex#readme",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.18.6",
+    "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.26.0",
     "gh-pages": "^4.0.0",
     "hint": "^2.0.0",
     "html-webpack-plugin": "^5.5.0",

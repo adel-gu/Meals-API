@@ -1,24 +1,23 @@
-import { URL_API, getFoodList } from './listItems';
+import { URL_API, getFoodList } from './listItems.js';
 // Using getFoodList function //
 const getdata = async () => {
   // create an empty array
   const datas = [];
   // awit api data
-  let foodList = await getFoodList(URL_API);
+  const foodList = await getFoodList(URL_API);
   // loop to get individual data and populate important data to our array
-  for(let s of foodList){
+  foodList.forEach((ata) => {
     const newarr = {
-      id: s.idMeal,
-      name: s.strMeal,
-      image: s.strMealThumb,
-      category: s.strCategory,
-      origin: s.strArea,
-      cookinginstruction: s.strInstructions
-    }
-    // push our new data
+      id: ata.idMeal,
+      name: ata.strMeal,
+      image: ata.strMealThumb,
+      category: ata.strCategory,
+      origin: ata.strArea,
+      cookinginstruction: ata.strInstructions,
+    };
     datas.push(newarr);
-  }
+  });
   return datas;
 };
 
-export {getdata}
+export default getdata;
