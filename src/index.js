@@ -1,5 +1,5 @@
 import './style.css';
-import { URL_API, getFoodList } from './modules/listItems';
+// import { URL_API, getFoodList } from './modules/listItems';
 
 // Using getFoodList function //
 //   async () => {
