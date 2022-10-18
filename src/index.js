@@ -1,12 +1,7 @@
-import _ from 'lodash';
 import './style.css';
+import { URL_API, getFoodList } from './modules/listItems';
 
-function component() {
-  const element = document.createElement('div');
-
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
-}
-
-document.body.appendChild(component());
+// Using getFoodList function //
+//   async () => {
+//        let foodList = await getFoodList(URL_API);
+//   };
