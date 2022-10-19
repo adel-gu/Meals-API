@@ -19,11 +19,3 @@ mealsNav.addEventListener('click', (e) => {
   // Generate new 9 items
   showMeals(mealsListContainer, navIndex);
 });
-
-// Using getFoodList function //
-const data = async () => {
-  const foodList = await getdata();
-  return foodList;
-  // console.log(foodList[0]);
-};
-data();

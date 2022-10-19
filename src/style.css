@@ -1,3 +1,24 @@
-body {
-  background-color: bisque;
+.bred {
+  border: 1px solid red;
+}
+.bblue {
+  border: 1px solid blue;
+}
+.bgreen {
+  border: 1px solid green;
+}
+
+.card-text {
+  height: 80px;
+  overflow-y: hidden;
+}
+
+.card-text::after {
+  content: "...Read more";
+  color: blue;
+  text-decoration: underline;
+}
+
+.f-list li {
+  height: 40rem;
 }
