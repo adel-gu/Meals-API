@@ -1,5 +1,4 @@
 import './style.css';
-import getdata from './modules/addData.js';
 import showMeals from './modules/showMeals';
 
 // Constants

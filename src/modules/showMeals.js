@@ -2,14 +2,14 @@ import getdata from './addData';
 
 const showMeals = async (container, pageIndex) => {
   // Get meals list
-  let meals = await getdata();
+  const meals = await getdata();
   // Slice only 9 meals elements
-  let limitMeals = meals.slice(pageIndex, pageIndex + 9);
+  const limitMeals = meals.slice(pageIndex, pageIndex + 9);
   // Populate meals to the screen
   limitMeals.forEach((meal) => {
     const mealTemplate = `
       <li class="col-12 col-sm-6 col-lg-4 p-3">
-        <div class="meal-card | card m-0  h-100">
+        <div class="meal-card | card m-0">
           <img
             src="${meal.image}"
             class="card-img-top"
@@ -23,14 +23,7 @@ const showMeals = async (container, pageIndex) => {
                 <span>❤️</span>
               </div>
             </div>
-            <div class="">
-              <p class="card-text">
-                ${meal.cookinginstruction.split('\n')[0]}
-              </p>
-            </div>
-            <a href="#" data-id="${
-              meal.id
-            }" class="btn btn-primary d-block">comments</a>
+            <a href="#" data-id="${meal.id}" class="btn btn-primary d-block">comments</a>
           </div>
         </div>
       </li>
