@@ -1,6 +1,6 @@
 import './style.css';
 import showMeals from './modules/showMeals';
-import { addLike } from './modules/likes';
+import { addLike } from './modules/fetchLikes';
 
 // Constants
 const mealsListContainer = document.querySelector('.f-list');
