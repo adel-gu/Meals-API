@@ -8,3 +8,10 @@
   color: blue;
   text-decoration: underline;
 }
+
+.shorten-text {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
