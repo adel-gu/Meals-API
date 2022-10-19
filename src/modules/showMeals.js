@@ -1,4 +1,4 @@
-import getdata from './addData';
+import getdata from './addData.js';
 
 const showMeals = async (container, pageIndex) => {
   // Get meals list
@@ -23,7 +23,7 @@ const showMeals = async (container, pageIndex) => {
                 <span>❤️</span>
               </div>
             </div>
-            <a href="#" data-id="${meal.id}" class="btn btn-primary d-block">comments</a>
+            <a href="#" data-id="${meal.id}" onclick="handleCommentClick(${meal.id})" class="btn btn-primary d-block">comments</a>
           </div>
         </div>
       </li>

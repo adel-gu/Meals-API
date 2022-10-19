@@ -1,5 +1,5 @@
 import './style.css';
-import showMeals from './modules/showMeals';
+import showMeals from './modules/showMeals.js';
 import populateComment from './modules/populateComment.js';
 
 // Constants
@@ -20,27 +20,15 @@ mealsNav.addEventListener('click', (e) => {
   showMeals(mealsListContainer, navIndex);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+const handleCommentClick = () => {
   populateComment();
   const thepopup = document.getElementById('popup');
   thepopup.classList.add('popup2');
-});
-
-const handleClick = () => {
-  const thepopup = document.getElementById('popup');
-  thepopup.classList.remove('popup2');
 };
 
 const handleSubmit = () => {
-  // const form = document.getElementById('form');
-  // console.log(e)
-  //   const data = {
-  //     "item_id": "52768",
-  //     "username": form.username.value,
-  //     "comment": form.insight.value
-  // }
-  // handlePostingComment(data, url);
+
 };
 // event.preventDefault();
-window.handleClick = handleClick;
-window.handleSubmit = handleSubmit();
+window.handleCommentClick = handleCommentClick;
+window.handleSubmit = handleSubmit;

@@ -37,17 +37,21 @@ body,
 .popup {
   display: none;
   width: 100%;
-  height: 90vh;
+  height: 105vh;
   overflow: scroll;
   position: fixed;
   padding: 15%;
+  z-index: 100;
   background-color: burlywood;
+  margin-top: -5%;
 }
 
 .popup2 {
   display: block;
   width: 100%;
-  height: 90vh;
+  margin-top: -5%;
+  height: 105vh;
+  z-index: 100;
   overflow: scroll;
   position: fixed;
   padding: 15%;
