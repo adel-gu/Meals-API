@@ -16,14 +16,16 @@ const showMeals = async (container, pageIndex) => {
             alt="${meal.name} image"
           />
           <div class="card-body">
-            <div class="card-details d-flex justify-content-between pb-3">
+            <div class="card-details d-flex justify-content-between align-items-start pb-3">
               <h5 class="card-title">${meal.name}</h5>
-              <div class="card-likes d-flex">
-                <span class="d-block">5 likes</span>
-                <span>❤️</span>
+              <div>
+                <button class="card-likes d-flex btn btn-danger">
+                  <span class="heart"><i class="bi bi-suit-heart"></i></span>
+                </button>
+                <span class="d-block me-2">5 likes</span>
               </div>
             </div>
-            <a href="#" data-id="${meal.id}" class="btn btn-primary d-block">comments</a>
+            <a href="#" data-id="${meal.id}" class="btn btn-dark d-block">comments</a>
           </div>
         </div>
       </li>
