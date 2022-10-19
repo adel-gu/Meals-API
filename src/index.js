@@ -18,14 +18,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // Populate according to the meals-nav
-mealsNav.addEventListener('click', (e) => {
+mealsNav.addEventListener('click', async (e) => {
   e.preventDefault();
   // Get the clicked nav link index data.
   const navIndex = e.target.getAttribute('data-index');
   // Empty the list meals container from the previous cards
   mealsListContainer.innerHTML = '';
   // Generate new 9 items
-  showMeals(mealsListContainer, navIndex);
+  await showMeals(mealsListContainer, navIndex);
 });
 
 // Post Likes
@@ -33,8 +33,11 @@ window.addEventListener('click', async (e) => {
   // Select the like button
   const likeBtn = e.target;
   if (likeBtn.classList.contains('card-likes')) {
-    // Get the meal ID
+    // Update numbers of likes on the API
     const mealId = likeBtn.getAttribute('data-id');
-    addLike(mealId);
+    await addLike(mealId);
+    // Update numbers of likes on the screen
+    const txtlike = likeBtn.nextElementSibling;
+    await showlike(txtlike);
   }
 });
