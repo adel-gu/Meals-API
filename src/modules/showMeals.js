@@ -17,7 +17,7 @@ const showMeals = async (container, pageIndex) => {
           />
           <div class="card-body">
             <div class="card-details d-flex justify-content-between pb-3">
-              <h5 class="card-title">${meal.name}</h5>
+              <h5 class="card-title shorten-text">${meal.name}</h5>
               <div class="card-likes d-flex">
                 <span class="d-block">5 likes</span>
                 <span>❤️</span>
