@@ -1,3 +1,17 @@
-body {
-  background-color: bisque;
+.card-text {
+  height: 80px;
+  overflow-y: hidden;
+}
+
+.card-text::after {
+  content: "...Read more";
+  color: blue;
+  text-decoration: underline;
+}
+
+.shorten-text {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
