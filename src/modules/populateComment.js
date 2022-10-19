@@ -1,5 +1,5 @@
 const thebody = document.getElementById('body');
-const populateComment = async () => {
+const populateComment = () => {
   const holder = `<div class="popup" id="popup">
       <div class="upperpopup">
         <figure class="upperpopup_figure">
