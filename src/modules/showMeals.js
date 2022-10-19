@@ -19,10 +19,10 @@ const showMeals = async (container, pageIndex) => {
             <div class="card-details d-flex justify-content-between align-items-start pb-3">
               <h5 class="card-title">${meal.name}</h5>
               <div>
-                <button class="card-likes d-flex btn btn-danger">
-                  <span class="heart"><i class="bi bi-suit-heart"></i></span>
+                <button class="card-likes d-flex btn btn-danger" data-id="${meal.id}">
+                  💛
                 </button>
-                <span class="d-block me-2">5 likes</span>
+                <span class="card-likes-txt d-block me-2" data-id="${meal.id}">0 Likes</span>
               </div>
             </div>
             <a href="#" data-id="${meal.id}" class="btn btn-dark d-block">comments</a>
