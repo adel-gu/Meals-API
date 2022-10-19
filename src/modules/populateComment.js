@@ -1,6 +1,6 @@
 const thebody = document.getElementById('body');
 const populateComment = async () => {
-const holder = `<div class="popup" id="popup">
+  const holder = `<div class="popup" id="popup">
       <div class="upperpopup">
         <figure class="upperpopup_figure">
           <img src="https://www.themealdb.com/images/media/meals/wxywrq1468235067.jpg" id="legendimage" class="image_u" width="250" alt="food">
@@ -29,10 +29,8 @@ const holder = `<div class="popup" id="popup">
         <input type="text" class="detail_p" id="insight" value=""  placeholder="Your Insight" required>
         <button type="submit" id="comment" class="button1">Comment</button>
       </form>
-    </div>`
-  thebody.innerHTML = holder
-    
-}
-
+    </div>`;
+  thebody.innerHTML = holder;
+};
 
 export default populateComment;
