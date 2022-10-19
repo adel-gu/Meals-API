@@ -1,4 +1,4 @@
-import getdata from './addData';
+import getdata from './mealsList';
 
 const showMeals = async (container, pageIndex) => {
   // Get meals list
