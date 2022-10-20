@@ -1,5 +1,17 @@
 const thebody = document.getElementById('body');
-const populateComment = () => {
+const df = 52768;
+const filledcomments = [];
+const loadData = async () => {
+  const fetcs = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments?item_id=52768');
+  const dataz = fetcs.json();
+  dataz.then((json) => {
+    json.forEach((adn) => {
+      filledcomments.push(adn);
+    });
+  });
+};
+loadData();
+const populateComment = (shs) => {
   const popup = document.createElement('div');
   popup.setAttribute('class', 'popup');
   popup.setAttribute('id', 'popup');
@@ -90,29 +102,22 @@ const populateComment = () => {
   const span1 = document.createElement('span');
   span1.innerText = '(2)';
   h35.appendChild(span1);
-  const dateComment1 = document.createElement('div');
-  dateComment1.setAttribute('class', 'date_comment');
-  const b1 = document.createElement('b');
-  b1.setAttribute('class', 'detail_p');
-  b1.innerText = '03/11/2021';
-  const p5 = document.createElement('p');
-  p5.setAttribute('class', 'detail_p');
-  p5.innerText = "Alex: I'd love to buy it";
-  dateComment1.appendChild(b1);
-  dateComment1.appendChild(p5);
-  const dateComment2 = document.createElement('div');
-  dateComment2.setAttribute('class', 'date_comment');
-  const b2 = document.createElement('b');
-  b2.setAttribute('class', 'detail_p');
-  b2.innerText = '03/12/2021';
-  const p6 = document.createElement('p');
-  p6.setAttribute('class', 'detail_p');
-  p6.innerText = 'I love';
-  dateComment2.appendChild(b2);
-  dateComment2.appendChild(p6);
   popupCommentSection.appendChild(h35);
-  popupCommentSection.appendChild(dateComment1);
-  popupCommentSection.appendChild(dateComment2);
+  filledcomments.map((datd) => {
+    const dateComment1 = document.createElement('div');
+    dateComment1.setAttribute('class', 'date_comment');
+    const b1 = document.createElement('b');
+    b1.setAttribute('class', 'detail_p');
+    b1.innerText = `${datd.creation_date}`;
+    const p5 = document.createElement('p');
+    p5.setAttribute('class', 'detail_p');
+    p5.innerText = `${datd.username}: ${datd.comment}`;
+    dateComment1.appendChild(b1);
+    dateComment1.appendChild(p5);
+    popupCommentSection.appendChild(dateComment1);
+
+    return null;
+  });
 
   const popupForm = document.createElement('form');
   popupForm.setAttribute('class', 'popup_form');
@@ -123,7 +128,6 @@ const populateComment = () => {
   const username = document.createElement('input');
   username.setAttribute('name', 'username');
   username.setAttribute('class', 'detail_p');
-  username.setAttribute('value', '');
   username.setAttribute('id', 'username');
   username.setAttribute('minlength', '5');
   username.setAttribute('placeholder', 'Your name');
@@ -132,7 +136,7 @@ const populateComment = () => {
   const insight = document.createElement('input');
   insight.setAttribute('name', 'insight');
   insight.setAttribute('class', 'detail_p');
-  insight.setAttribute('value', '');
+  insight.setAttribute('value', ' ');
   insight.setAttribute('id', 'insight');
   insight.setAttribute('minlength', '1');
   insight.setAttribute('placeholder', 'Your name');
@@ -159,6 +163,28 @@ const populateComment = () => {
   closeicon.addEventListener('click', () => {
     const thepopup = document.getElementById('popup');
     thepopup.classList.remove('popup2');
+  });
+
+  const formsd = document.getElementById('form');
+  formsd.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const thefetch = await fetch(shs, {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: df,
+        username: formsd.username.value,
+        comment: formsd.insight.value,
+      }),
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+    });
+    const mystatus = thefetch.status;
+    if (mystatus === 201) {
+      document.getElementById('form').reset();
+      loadData();
+    }
   });
 };
 
