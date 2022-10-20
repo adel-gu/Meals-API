@@ -22,8 +22,9 @@ mealsNav.addEventListener('click', (e) => {
   showMeals(mealsListContainer, navIndex);
 });
 
-const handleCommentClick = () => {
-  populateComment(urls);
+const handleCommentClick = async (meals) => {
+  const [id, name, category, image, origin] = meals;
+  await populateComment(id, name, category, image, origin, urls);
   const thepopup = document.getElementById('popup');
   thepopup.classList.add('popup2');
 };
@@ -31,6 +32,7 @@ const handleCommentClick = () => {
 const handleSubmit = () => {
 
 };
+
 // event.preventDefault();
 window.handleCommentClick = handleCommentClick;
 window.handleSubmit = handleSubmit;
