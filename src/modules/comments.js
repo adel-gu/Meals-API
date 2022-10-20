@@ -1,7 +1,5 @@
-
-
-const comments = ( comm, data) => {
-  comm.innerHTML = "";
+const comments = (comm, data) => {
+  comm.innerHTML = '';
   data.map((datd) => {
     const dateComment1 = document.createElement('div');
     dateComment1.setAttribute('class', 'date_comment');
@@ -17,6 +15,6 @@ const comments = ( comm, data) => {
 
     return null;
   });
-}
+};
 
 export default comments;

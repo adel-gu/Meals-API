@@ -2,7 +2,6 @@ import getdata from './addData.js';
 import comments from './comments.js';
 
 const thebody = document.getElementById('body');
-const filledcomments = [];
 
 const getinstruction = async (id) => {
   const df = await getdata();
@@ -19,12 +18,12 @@ const loadData = async (id) => {
   //     filledcomments.push(adn);
   //   });
   // });
-  return dataz.then(data => data);
+  return dataz.then((data) => data);
 };
 
 const populateComment = async (id, name, category, images, origin, shs) => {
   const s = await loadData(id);
-  
+
   const instr = await getinstruction(id);
   const popup = document.createElement('div');
   popup.setAttribute('class', 'popup');
@@ -119,7 +118,7 @@ const populateComment = async (id, name, category, images, origin, shs) => {
   popupCommentSection.appendChild(h35);
 
   const commentHoder = document.createElement('div');
-  commentHoder.setAttribute("class", 'comment_holder')
+  commentHoder.setAttribute('class', 'comment_holder');
   popupCommentSection.appendChild(commentHoder);
   comments(commentHoder, s);
 
@@ -164,7 +163,8 @@ const populateComment = async (id, name, category, images, origin, shs) => {
 
   thebody.appendChild(popup);
 
-  closeicon.addEventListener('click', () => {
+  closeicon.addEventListener('click', (e) => {
+    e.preventDefault();
     const thepopup = document.getElementById('popup');
     thepopup.classList.remove('popup2');
     thebody.innerHTML = '';
@@ -187,7 +187,7 @@ const populateComment = async (id, name, category, images, origin, shs) => {
     });
     const mystatus = thefetch.status;
     if (mystatus === 201) {
-      commentHoder.innerHTML = "";
+      commentHoder.innerHTML = '';
       document.getElementById('form').reset();
       const p = await loadData(id);
       comments(commentHoder, p);
