@@ -1,6 +1,7 @@
 import getdata from './addData.js';
 import comments from './comments.js';
 import counter from './counterComment.js';
+
 const thebody = document.getElementById('body');
 
 const getinstruction = async (id) => {
