@@ -1,10 +1,18 @@
 import getdata from './addData.js';
 
 const thebody = document.getElementById('body');
-const df = 52768;
 const filledcomments = [];
-const loadData = async () => {
-  const fetcs = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments?item_id=52768');
+
+const getinstruction = async (id) => {
+  const df = await getdata();
+  const x = df.splice(0);
+  const filtered = x.filter((b) => parseInt(b.id, 10) === id);
+  return filtered[0].cookinginstruction;
+};
+
+
+const loadData = async (id) => {
+  const fetcs = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments?item_id=${id}`);
   const dataz = fetcs.json();
   dataz.then((json) => {
     json.forEach((adn) => {
@@ -12,17 +20,10 @@ const loadData = async () => {
     });
   });
 };
-loadData();
+
+
 const populateComment = async (id, name, category, images, origin, shs) => {
-
-const getinstruction = async (id) => {
-  const df = await getdata();
-  const x = df.splice(1);
-  const filtered = x.filter((b) => parseInt(b.id, 10) === id);
-  return filtered[0].cookinginstruction;
-};
-
-
+  loadData(id);
   const instr = await getinstruction(id);
   const popup = document.createElement('div');
   popup.setAttribute('class', 'popup');
@@ -185,7 +186,7 @@ const getinstruction = async (id) => {
     const thefetch = await fetch(shs, {
       method: 'POST',
       body: JSON.stringify({
-        item_id: df,
+        item_id: id,
         username: formsd.username.value,
         comment: formsd.insight.value,
       }),
