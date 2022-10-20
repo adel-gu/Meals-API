@@ -23,7 +23,8 @@ const loadData = async (id) => {
 };
 
 const populateComment = async (id, name, category, images, origin, shs) => {
-   await loadData(id);
+  const s = await loadData(id);
+  
   const instr = await getinstruction(id);
   const popup = document.createElement('div');
   popup.setAttribute('class', 'popup');
@@ -120,6 +121,7 @@ const populateComment = async (id, name, category, images, origin, shs) => {
   const commentHoder = document.createElement('div');
   commentHoder.setAttribute("class", 'comment_holder')
   popupCommentSection.appendChild(commentHoder);
+  comments(commentHoder, s);
 
   const popupForm = document.createElement('form');
   popupForm.setAttribute('class', 'popup_form');
@@ -185,6 +187,7 @@ const populateComment = async (id, name, category, images, origin, shs) => {
     });
     const mystatus = thefetch.status;
     if (mystatus === 201) {
+      commentHoder.innerHTML = "";
       document.getElementById('form').reset();
       const p = await loadData(id);
       comments(commentHoder, p);

@@ -1,7 +1,7 @@
 
 
 const comments = ( comm, data) => {
-  console.log(data, comm)
+  comm.innerHTML = "";
   data.map((datd) => {
     const dateComment1 = document.createElement('div');
     dateComment1.setAttribute('class', 'date_comment');
