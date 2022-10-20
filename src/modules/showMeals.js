@@ -1,12 +1,11 @@
 import getdata from './mealsList';
 
-const showMeals = async (container, pageIndex) => {
+const showMeals = async (container) => {
   // Get meals list
   const meals = await getdata();
-  // Slice only 9 meals elements
-  const limitMeals = meals.slice(pageIndex, pageIndex + 9);
+
   // Populate meals to the screen
-  limitMeals.forEach((meal) => {
+  meals.forEach((meal) => {
     const mealTemplate = `
       <li class="col-12 col-sm-6 col-lg-4 p-3">
         <div class="meal-card | card m-0">
