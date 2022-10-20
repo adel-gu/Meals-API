@@ -29,10 +29,6 @@ const handleCommentClick = async (meals) => {
   thepopup.classList.add('popup2');
 };
 
-const handleSubmit = () => {
-
-};
 
 // event.preventDefault();
 window.handleCommentClick = handleCommentClick;
-window.handleSubmit = handleSubmit;

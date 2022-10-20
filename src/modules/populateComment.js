@@ -1,4 +1,5 @@
 import getdata from './addData.js';
+import comments from './comments.js';
 
 const thebody = document.getElementById('body');
 const filledcomments = [];
@@ -13,15 +14,16 @@ const getinstruction = async (id) => {
 const loadData = async (id) => {
   const fetcs = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments?item_id=${id}`);
   const dataz = fetcs.json();
-  dataz.then((json) => {
-    json.forEach((adn) => {
-      filledcomments.push(adn);
-    });
-  });
+  // dataz.then((json) => {
+  //   json.forEach((adn) => {
+  //     filledcomments.push(adn);
+  //   });
+  // });
+  return dataz.then(data => data);
 };
 
 const populateComment = async (id, name, category, images, origin, shs) => {
-  loadData(id);
+   await loadData(id);
   const instr = await getinstruction(id);
   const popup = document.createElement('div');
   popup.setAttribute('class', 'popup');
@@ -114,21 +116,10 @@ const populateComment = async (id, name, category, images, origin, shs) => {
   span1.innerText = '(2)';
   h35.appendChild(span1);
   popupCommentSection.appendChild(h35);
-  filledcomments.map((datd) => {
-    const dateComment1 = document.createElement('div');
-    dateComment1.setAttribute('class', 'date_comment');
-    const b1 = document.createElement('b');
-    b1.setAttribute('class', 'detail_p');
-    b1.innerText = `${datd.creation_date}`;
-    const p5 = document.createElement('p');
-    p5.setAttribute('class', 'detail_p');
-    p5.innerText = `${datd.username}: ${datd.comment}`;
-    dateComment1.appendChild(b1);
-    dateComment1.appendChild(p5);
-    popupCommentSection.appendChild(dateComment1);
 
-    return null;
-  });
+  const commentHoder = document.createElement('div');
+  commentHoder.setAttribute("class", 'comment_holder')
+  popupCommentSection.appendChild(commentHoder);
 
   const popupForm = document.createElement('form');
   popupForm.setAttribute('class', 'popup_form');
@@ -195,7 +186,8 @@ const populateComment = async (id, name, category, images, origin, shs) => {
     const mystatus = thefetch.status;
     if (mystatus === 201) {
       document.getElementById('form').reset();
-      loadData();
+      const p = await loadData(id);
+      comments(commentHoder, p);
     }
   });
 };
