@@ -10,7 +10,6 @@ const getinstruction = async (id) => {
   return filtered[0].cookinginstruction;
 };
 
-
 const loadData = async (id) => {
   const fetcs = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments?item_id=${id}`);
   const dataz = fetcs.json();
@@ -20,7 +19,6 @@ const loadData = async (id) => {
     });
   });
 };
-
 
 const populateComment = async (id, name, category, images, origin, shs) => {
   loadData(id);
