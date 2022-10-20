@@ -4,7 +4,7 @@ const thebody = document.getElementById('body');
 
 const getinstruction = async (id) => {
   const df = await getdata();
-  const x = df.splice(1);
+  const x = df.splice(0);
   const filtered = x.filter((b) => parseInt(b.id, 10) === id);
   return filtered[0].cookinginstruction;
 };
