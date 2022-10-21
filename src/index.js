@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   await showMeals(mealsListContainer);
   // Selecet meals items
   const meals = document.getElementsByClassName('meal-card');
-  mealsCounter([...meals]);
+  const counterContentText = document.querySelector('.meals-counts');
+  counterContentText.textContent = mealsCounter([...meals]);
   // Select all likes element
   const textLikes = document.getElementsByClassName('card-likes-txt');
   [...textLikes].forEach(async (textLike) => {
