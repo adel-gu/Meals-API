@@ -1,6 +1,6 @@
 import './style.css';
-import showMeals from './modules/showMeals';
-
+import showMeals from './modules/showMeals.js';
+import populateComment from './modules/populateComment.js';
 // Constants
 const mealsListContainer = document.querySelector('.f-list');
 const mealsNav = document.querySelector('.control');
@@ -18,3 +18,18 @@ mealsNav.addEventListener('click', (e) => {
   // Generate new 9 items
   showMeals(mealsListContainer, navIndex);
 });
+
+const handleCommentClick = async (meals) => {
+  const [id, name, category, image, origin] = meals;
+  await populateComment(id, name, category, image, origin);
+  const thepopup = document.getElementById('popup');
+  thepopup.classList.add('popup2');
+};
+
+const handleSubmit = () => {
+
+};
+
+// event.preventDefault();
+window.handleCommentClick = handleCommentClick;
+window.handleSubmit = handleSubmit;
