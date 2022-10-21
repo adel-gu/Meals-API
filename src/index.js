@@ -1,15 +1,17 @@
 import './style.css';
-import showMeals from './modules/showMeals.js';
+import showMeals from './modules/showMeals';
 import populateComment from './modules/populateComment.js';
-
-const urls = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments';
+import { addLike } from './modules/likes';
 
 // Constants
+const urls = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments';
 const mealsListContainer = document.querySelector('.f-list');
 const mealsNav = document.querySelector('.control');
 
 // Populate the meals cards items
-document.addEventListener('DOMContentLoaded', showMeals(mealsListContainer, 0));
+document.addEventListener('DOMContentLoaded', async () => {
+  await showMeals(mealsListContainer, 0);
+});
 
 // Populate according to the meals-nav
 mealsNav.addEventListener('click', (e) => {
@@ -20,6 +22,17 @@ mealsNav.addEventListener('click', (e) => {
   mealsListContainer.innerHTML = '';
   // Generate new 9 items
   showMeals(mealsListContainer, navIndex);
+});
+
+// Post Likes
+window.addEventListener('click', async (e) => {
+  // Select the like button
+  const likeBtn = e.target;
+  if (likeBtn.classList.contains('card-likes')) {
+    // Get the meal ID
+    const mealId = likeBtn.getAttribute('data-id');
+    addLike(mealId);
+  }
 });
 
 const handleCommentClick = async (meals) => {

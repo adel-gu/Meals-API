@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Open+Sans:wght@300;400;500;600;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -75,12 +75,12 @@ body,
 .detail {
   display: flex;
   gap: 0.5rem;
-  font-family: 'Lobster Two', cursive;
+  font-family: "Lobster Two", cursive;
   font-weight: 400;
 }
 
 .detail_p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   padding-bottom: 0.5rem;
 }
@@ -96,7 +96,7 @@ body,
 }
 
 .detail2 {
-  font-family: 'Lobster Two', cursive;
+  font-family: "Lobster Two", cursive;
   font-weight: 700;
 }
 
@@ -159,7 +159,7 @@ body,
 .button1 {
   border-radius: 12px;
   padding: 1rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   font-size: x-large;
   transition: background-color 0.5s ease;
