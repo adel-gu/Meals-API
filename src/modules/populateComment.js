@@ -13,7 +13,7 @@ const getinstruction = async (id) => {
 
 const loadData = async (id) => {
   const fetcs = await fetch(
-    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments?item_id=${id}`
+    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments?item_id=${id}`,
   );
   const dataz = fetcs.json();
   return dataz.then((data) => data);
