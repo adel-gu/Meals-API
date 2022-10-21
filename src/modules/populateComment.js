@@ -1,5 +1,6 @@
 import getdata from './addData.js';
 import comments from './comments.js';
+import counter from './counterComment.js';
 
 const thebody = document.getElementById('body');
 
@@ -13,11 +14,6 @@ const getinstruction = async (id) => {
 const loadData = async (id) => {
   const fetcs = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments?item_id=${id}`);
   const dataz = fetcs.json();
-  // dataz.then((json) => {
-  //   json.forEach((adn) => {
-  //     filledcomments.push(adn);
-  //   });
-  // });
   return dataz.then((data) => data);
 };
 
@@ -111,10 +107,8 @@ const populateComment = async (id, name, category, images, origin, shs) => {
   const popupCommentSection = document.createElement('article');
   const h35 = document.createElement('h3');
   h35.setAttribute('class', 'detail detail3');
-  h35.innerText = 'Comments';
-  const span1 = document.createElement('span');
-  span1.innerText = '(2)';
-  h35.appendChild(span1);
+  h35.innerText = '';
+  counter(h35, s);
   popupCommentSection.appendChild(h35);
 
   const commentHoder = document.createElement('div');
@@ -188,9 +182,11 @@ const populateComment = async (id, name, category, images, origin, shs) => {
     const mystatus = thefetch.status;
     if (mystatus === 201) {
       commentHoder.innerHTML = '';
+      h35.innerHTML = '';
       document.getElementById('form').reset();
       const p = await loadData(id);
       comments(commentHoder, p);
+      counter(h35, p);
     }
   });
 };
