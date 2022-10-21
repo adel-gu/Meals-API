@@ -5,7 +5,7 @@ const showlike = async (txtLike) => {
   const likesList = await getLikes();
   const numberLikes = likesList.filter((likeObj) => likeObj.item_id === mealId);
   if (numberLikes.length > 0) {
-    txtLike.innerHTML = `${numberLikes[0].likes} Likes`;
+    txtLike.textContent = `${numberLikes[0].likes} Likes`;
   }
 };
 

@@ -32,7 +32,7 @@ window.addEventListener('click', async (e) => {
     const mealId = likeBtn.getAttribute('data-id');
     await addLike(mealId);
     // Update numbers of likes on the screen
-    const txtlike = likeBtn.nextElementSibling;
+    const txtlike = likeBtn.parentElement.previousElementSibling.lastChild.previousSibling;
     await showlike(txtlike);
   }
 });
