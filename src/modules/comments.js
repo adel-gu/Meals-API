@@ -1,6 +1,6 @@
 const comments = (comm, data) => {
   comm.innerHTML = '';
-  if (data.error){
+  if (data.error) {
     data = [];
   }
   data.map((datd) => {

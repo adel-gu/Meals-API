@@ -22,5 +22,4 @@ describe('counter tests', () => {
     // assert
     expect(h35.innerHTML).not.toBe('');
   });
-  
 });
