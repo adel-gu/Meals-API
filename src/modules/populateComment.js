@@ -162,6 +162,7 @@ const populateComment = async (id, name, category, images, origin, shs) => {
     const thepopup = document.getElementById('popup');
     thepopup.classList.remove('popup2');
     thebody.innerHTML = '';
+    document.body.classList.remove('body-y-scroll');
   });
 
   const formsd = document.getElementById('form');

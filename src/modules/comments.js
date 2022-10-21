@@ -1,5 +1,8 @@
 const comments = (comm, data) => {
   comm.innerHTML = '';
+  if (data.error) {
+    data = [];
+  }
   data.map((datd) => {
     const dateComment1 = document.createElement('div');
     dateComment1.setAttribute('class', 'date_comment');

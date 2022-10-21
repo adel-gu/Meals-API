@@ -26,6 +26,7 @@ const handleCommentClick = async (meals) => {
   const [id, name, category, image, origin] = meals;
   await populateComment(id, name, category, image, origin, urls);
   const thepopup = document.getElementById('popup');
+  document.body.classList.add('body-y-scroll');
   thepopup.classList.add('popup2');
 };
 
