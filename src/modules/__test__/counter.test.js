@@ -1,5 +1,5 @@
 /** @jest-environment jsdom */
-import counter from './modules/counterComment.js';
+import counter from '../counterComment.js';
 
 describe('counter tests', () => {
   test('test counter', () => {
