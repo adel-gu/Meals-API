@@ -29,10 +29,6 @@ To get a local copy up and running follow these simple example steps.
 
 - Clone this repo using this URL (link) or download it as a ZIP format from the green button above under the text Code.
 
-- Usage: inside the project, folder look for the ìndex.html file and open it using your preferred web browser.
-
-### Setup
-
 ### Install
 ```shell
 npm install
