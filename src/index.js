@@ -6,8 +6,7 @@ import mealsCounter from './modules/mealsCounter';
 import populateComment from './modules/populateComment.js';
 
 // Constants
-const urls =
-  'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments';
+const urls = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments';
 const mealsListContainer = document.querySelector('.f-list');
 
 // Populate the meals cards items

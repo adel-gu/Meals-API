@@ -1,5 +1,3 @@
-const mealsCounter = (meals) => {
-  return meals.length;
-};
+const mealsCounter = (meals) => meals.length;
 
 export default mealsCounter;
