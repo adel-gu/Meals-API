@@ -44,7 +44,7 @@ npm run test
 npm run deploy
 ```
 
-## Author
+## Authors
 
 👤 **Adel Guitoun**
 
