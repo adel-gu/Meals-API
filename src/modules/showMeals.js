@@ -1,4 +1,4 @@
-import getdata from './addData';
+import getdata from './addData.js';
 
 const showMeals = async (container, pageIndex) => {
   // Get meals list
@@ -16,8 +16,8 @@ const showMeals = async (container, pageIndex) => {
             alt="${meal.name} image"
           />
           <div class="card-body">
-            <div class="card-details d-flex justify-content-between align-items-start pb-3">
-              <h5 class="card-title">${meal.name}</h5>
+            <div class="card-details d-flex justify-content-between pb-3">
+              <h5 class="card-title shorten-text">${meal.name}</h5>
               <div>
                 <button class="card-likes d-flex btn btn-danger" data-id="${meal.id}">
                   💛
@@ -25,7 +25,7 @@ const showMeals = async (container, pageIndex) => {
                 <span class="card-likes-txt d-block me-2" data-id="${meal.id}">0 Likes</span>
               </div>
             </div>
-            <a href="#" data-id="${meal.id}" class="btn btn-dark d-block">comments</a>
+            <a href="#" data-id="${meal.id}" onclick="handleCommentClick([${meal.id}, '${meal.name}', '${meal.category}', '${meal.image}', '${meal.origin}'])" class="btn btn-dark d-block">comments</a>
           </div>
         </div>
       </li>
