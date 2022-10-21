@@ -18,9 +18,11 @@
 - JavaScript
 - Webpack
 
-## Live Demo (if available)
+## Live Demo 
 [Experience a live Demo 🚀](https://adel-gu.github.io/Meals-API/)
 
+## A brief description on the project
+[Video description](https://drive.google.com/file/d/1cW2jRlLERSZEJq7JpNkH4vNYuovwiHtB/view?usp=sharing)
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
