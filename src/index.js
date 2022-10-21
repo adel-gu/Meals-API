@@ -1,27 +1,21 @@
 import './style.css';
 import showMeals from './modules/showMeals';
+import { addLike } from './modules/fetchLikes';
+import showlike from './modules/showLike';
 import populateComment from './modules/populateComment.js';
-import { addLike } from './modules/likes';
 
 // Constants
 const urls = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments';
 const mealsListContainer = document.querySelector('.f-list');
-const mealsNav = document.querySelector('.control');
 
 // Populate the meals cards items
 document.addEventListener('DOMContentLoaded', async () => {
-  await showMeals(mealsListContainer, 0);
-});
-
-// Populate according to the meals-nav
-mealsNav.addEventListener('click', (e) => {
-  e.preventDefault();
-  // Get the clicked nav link index data.
-  const navIndex = e.target.getAttribute('data-index');
-  // Empty the list meals container from the previous cards
-  mealsListContainer.innerHTML = '';
-  // Generate new 9 items
-  showMeals(mealsListContainer, navIndex);
+  await showMeals(mealsListContainer);
+  // Select all likes element
+  const textLikes = document.getElementsByClassName('card-likes-txt');
+  [...textLikes].forEach(async (textLike) => {
+    await showlike(textLike);
+  });
 });
 
 // Post Likes
@@ -29,9 +23,12 @@ window.addEventListener('click', async (e) => {
   // Select the like button
   const likeBtn = e.target;
   if (likeBtn.classList.contains('card-likes')) {
-    // Get the meal ID
+    // Update numbers of likes on the API
     const mealId = likeBtn.getAttribute('data-id');
-    addLike(mealId);
+    await addLike(mealId);
+    // Update numbers of likes on the screen
+    const txtlike = likeBtn.nextElementSibling;
+    await showlike(txtlike);
   }
 });
 

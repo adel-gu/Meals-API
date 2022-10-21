@@ -1,4 +1,4 @@
-import getdata from './addData.js';
+import getdata from './mealsList.js';
 import comments from './comments.js';
 import counter from './counterComment.js';
 
@@ -12,7 +12,9 @@ const getinstruction = async (id) => {
 };
 
 const loadData = async (id) => {
-  const fetcs = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments?item_id=${id}`);
+  const fetcs = await fetch(
+    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/N317ounBUtSwOefLVAgO/comments?item_id=${id}`,
+  );
   const dataz = fetcs.json();
   return dataz.then((data) => data);
 };
