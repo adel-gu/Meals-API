@@ -14,11 +14,51 @@
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet" />
   </head>
   <body>
+    <!-- Start header -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid container p-3">
+          <a class="navbar-brand" href="#">Meals Recipes 🧆</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Meals(<span class="meals-counts"></span>)</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-danger" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- End Header -->
     <!-- Start Main -->
     <div id="body"></div>
     <main>
       <section id="meals-section">
-        <ul class="f-list | row list-unstyled mt-5 p-5 mx-auto"></ul>
+        <div class="container-fluid container p-0">
+          <ul class="f-list | row list-unstyled mt-5 mx-auto"></ul>
+        </div>
       </section>
     </main>
     <!-- End Main -->
