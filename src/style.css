@@ -1,4 +1,21 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+* {
+  margin: 0.00001px;
+  padding: 0.000001px;
+}
+
+.body-y-scroll {
+  overflow-y: hidden;
+}
 
 .card-text {
   height: 80px;
@@ -9,4 +26,177 @@
   content: "...Read more";
   color: blue;
   text-decoration: underline;
+}
+
+.shorten-text {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+/* mobile-first */
+
+.popup {
+  display: none;
+}
+
+.popup2 {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  top: 0.00000111px;
+  z-index: 100;
+  overflow-y: scroll;
+  position: fixed;
+  padding: 15%;
+  background-color: burlywood;
+}
+
+.upperpopup {
+  display: flex;
+  gap: 2rem;
+}
+
+.close {
+  color: #111;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.middlepop_simple_titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.detail {
+  display: flex;
+  gap: 0.5rem;
+  font-family: "Lobster Two", cursive;
+  font-weight: 400;
+}
+
+.detail_p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  padding-bottom: 0.5rem;
+}
+
+.middlepopup_middle_detail {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #111;
+  border-radius: 8px;
+  padding: 0.5rem;
+  height: 150px;
+  overflow: scroll;
+}
+
+.detail2 {
+  font-family: "Lobster Two", cursive;
+  font-weight: 700;
+}
+
+.popup_comment_section {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 50px;
+  gap: 1rem;
+}
+
+.detail3 {
+  font-weight: 700;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+.date_comment {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.popup_form {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detail4 {
+  font-weight: 700;
+  text-align: center;
+}
+
+#username {
+  padding: 1rem;
+  outline: none;
+  font-size: larger;
+  border-radius: 8px;
+}
+
+#username::placeholder {
+  color: gray;
+  font-size: larger;
+}
+
+#insight {
+  padding: 1rem;
+  outline: none;
+  height: 150px;
+  font-size: larger;
+  border-radius: 8px;
+}
+
+#insight::placeholder {
+  font-size: larger;
+}
+
+.button1 {
+  border-radius: 12px;
+  padding: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: x-large;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+}
+
+.button1:hover {
+  background-color: rgba(128, 128, 128, 0.856);
+  color: #fff;
+}
+
+/* desktop  */
+
+@media only screen and (min-width: 768px) {
+  .popup,
+  .popup2 {
+    padding: 5%;
+  }
+
+  .image_u {
+    width: 50%;
+  }
+
+  .upperpopup {
+    justify-content: flex-end;
+    padding: 1rem;
+  }
+
+  .middlepop_simple_titles {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+  }
+
+  .detail3,
+  .detail4 {
+    display: flex;
+    justify-content: center;
+  }
 }
