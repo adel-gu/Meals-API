@@ -1,5 +1,3 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 # Meals Recipes - API
 
 > We collaborated @adel @svitalis123 to build a Meals Recipe API to help the client access delicious foods right at their technologies.
